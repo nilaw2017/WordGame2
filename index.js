@@ -3,6 +3,7 @@ const msg = document.querySelector(".text");
 const guess = document.querySelector("input");
 const btn = document.querySelector(".btn");
 const hint = document.querySelector("#hint");
+
 // console.log(randomWords())
 
 let play = false;
@@ -69,7 +70,7 @@ const createNewWords = () => {
 const breakingWords = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     let temp = array[i];
-    // console.log(temp)
+    console.log(temp);
     let j = Math.floor(Math.random() * (i + 1));
 
     array[i] = array[j];
@@ -87,21 +88,23 @@ btn.addEventListener("click", function () {
     newWords = createNewWords();
     randWords = breakingWords(newWords.split("")).join("");
     // console.log(randWords)
-    msg.innerHTML = `Write the word correctly >> ${randWords}`;
+    msg.innerHTML = `Write the word correctly >>> ${randWords}`;
   } else {
     let tempWord = guess.value;
+    console.log("TEMPWORD >>", tempWord.toLowerCase());
     if (tempWord.toLowerCase() === newWords) {
-      play = false;
       msg.innerHTML = "Congratulation Dear on correcting the word";
       btn.innerHTML = "Next Word";
       guess.classList.toggle("hide");
       guess.value = "";
+      play = false;
     } else {
-      console.log("incoorect");
-      // guess.classList.toggle('hide')
-
+      // guess.classList.toggle("hide");
       msg.innerHTML = `Sorry Dear! You are incorrect. Please try again! >> ${randWords}`;
-      btn.innerHTML = "Start Again?";
+      // msg.innerHTML = `Sorry Dear! You are incorrect. Correct word was >>> ${newWords}`;
+
+      btn.innerHTML = "Try Again?";
+      // play = false;
     }
   }
 });
