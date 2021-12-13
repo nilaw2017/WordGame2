@@ -89,7 +89,7 @@ btn.addEventListener("click", function () {
     msg.innerHTML = `Write the word correctly >> ${randWords}`;
   } else {
     let tempWord = guess.value;
-    if (tempWord === newWords) {
+    if (tempWord.toLowerCase() === newWords) {
       play = false;
       msg.innerHTML = "Congratulation Dear on correcting the word";
       btn.innerHTML = "Next Word";
