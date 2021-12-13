@@ -2,7 +2,7 @@
 const msg = document.querySelector(".text");
 const guess = document.querySelector("input");
 const btn = document.querySelector(".btn");
-
+const hint = document.querySelector("#hint");
 // console.log(randomWords())
 
 let play = false;
@@ -103,4 +103,8 @@ btn.addEventListener("click", function () {
       btn.innerHTML = "Start Again?";
     }
   }
+});
+
+hint.addEventListener("click", () => {
+  hint.innerHTML = newWords;
 });
