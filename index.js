@@ -82,6 +82,7 @@ btn.addEventListener("click", function () {
   if (!play) {
     play = true;
     btn.innerHTML = "GUESS";
+    hint.innerHTML = "HINT?? Click here";
     guess.classList.toggle("hide");
     newWords = createNewWords();
     randWords = breakingWords(newWords.split("")).join("");
