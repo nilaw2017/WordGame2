@@ -39,13 +39,13 @@ section {
   height: 50vh;
   width: 50vw;
   box-shadow: 0 10px 10px #000;
-  
 }
 
 #hint {
   margin-bottom: 30px;
-  transition: 0.5s;
+  /* border: #a52a2a 1px solid; */
   padding: 15px;
+  transition: 0.5s;
 }
 
 #hint:hover {
@@ -68,7 +68,7 @@ input {
   background-color: aquamarine;
   border: none;
   border-radius: 10px;
-} 
+}
 
 .hide {
   display: none;
